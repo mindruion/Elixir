@@ -2,6 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/cors_plug" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/jason" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/plug_cowboy" />
     </content>
@@ -29,5 +30,7 @@
     <orderEntry type="library" name="httparrot" level="project" />
     <orderEntry type="library" name="meck" level="project" />
     <orderEntry type="library" name="plug_cowboy" level="project" />
+    <orderEntry type="library" name="cors_plug" level="project" />
+    <orderEntry type="library" name="mix_test_watch" level="project" />
   </component>
 </module>

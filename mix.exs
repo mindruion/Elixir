@@ -27,6 +27,7 @@ defmodule Lab1.MixProject do
       {:plug_cowboy, "~> 1.0"},
       {:plug, "~> 1.0"},
       {:json, "~> 1.2"},
+      {:cors_plug, "~> 2.0"},
     ]
   end
 end
