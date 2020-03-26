@@ -19,7 +19,7 @@ defmodule Lab1.Application do
         scheme: :http,
         plug: RealTimeProgramming.Router,
         options: [
-          port: 4001
+          port: 8000
         ]
       ),
       {

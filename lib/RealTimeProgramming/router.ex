@@ -10,10 +10,10 @@ defmodule RealTimeProgramming.Router do
 
   get "/" do
     forecast = GenServer.call(Aggregator, :get_forecast)
-    date = "Forecast for #{DateTime.utc_now().day}/#{DateTime.utc_now().month}/#{DateTime.utc_now().year} #{
+    date_now = "#{DateTime.utc_now().day}/#{DateTime.utc_now().month}/#{DateTime.utc_now().year} #{
       DateTime.utc_now().hour
-    }:#{DateTime.utc_now().minute}"
-    result = [forecast: forecast[:final_forecast], date: date]
+    }:#{DateTime.utc_now().minute}:#{DateTime.utc_now().second}"
+    result = [forecast: forecast[:final_forecast], date: date_now]
     {:ok, json} = JSON.encode(result)
     send_resp(conn, 200, json)
   end

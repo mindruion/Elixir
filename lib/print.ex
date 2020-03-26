@@ -11,12 +11,9 @@ defmodule Print do
 
   def get_forecast(start_time, update_frequency, is_working) do
     time_now = Time.utc_now()
-    date_time_now = DateTime.utc_now()
     diff = Time.diff(time_now, start_time, :millisecond)
 
     if diff > update_frequency && is_working === true do
-      forecast = GenServer.call(Aggregator, :get_forecast)
-      print(forecast[:final_forecast], date_time_now)
       get_forecast(time_now, update_frequency, is_working)
     else
       receive do
@@ -32,11 +29,5 @@ defmodule Print do
         10 -> get_forecast(start_time, update_frequency, is_working)
       end
     end
-  end
-
- 
-
-  def print(forecast, date_time_now) do
-    date = "Forecast for #{date_time_now.day} #{date_time_now.month} #{date_time_now.year} #{date_time_now.hour} #{date_time_now.minute}"
   end
 end
