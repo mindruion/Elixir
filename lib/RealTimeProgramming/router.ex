@@ -4,6 +4,7 @@ defmodule RealTimeProgramming.Router do
   plug CORSPlug, origin: ["http://localhost:4200"]
   plug Plug.Parsers,
        parsers: [:json],
+       origin: ["*"],
        pass: ["text/*"],
        json_decoder: JSON
   plug :match
