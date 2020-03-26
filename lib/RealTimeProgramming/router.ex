@@ -1,7 +1,7 @@
 defmodule RealTimeProgramming.Router do
   use Plug.Router
 
-  plug CORSPlug, origin: ["http://localhost:4200"]
+  plug CORSPlug, origin: ["*"]
   plug Plug.Parsers,
        parsers: [:json],
        origin: ["*"],
